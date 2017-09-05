@@ -1,0 +1,21 @@
+server:
+  contextPath: /device
+  servlet-path: /
+spring:
+  jersey:
+    application-path: /api
+  data:
+    cassandra:
+      keyspace-name: cgist
+  datasource:
+    url: "jdbc:h2:mem:testdb"
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ""
+    initialize: true
+  jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+      hibernate.ddl-auto: create
+  h2.console.enabled: true
+management:
+  context-path: /manage

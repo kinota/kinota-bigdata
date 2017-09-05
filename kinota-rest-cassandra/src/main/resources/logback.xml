@@ -1,0 +1,26 @@
+<configuration debug="true">
+    <!-- <appender name="TIME_BASED_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+         <file>${log.home}/@project.artifactId@/@project.artifactId@.log</file>
+         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+             <fileNamePattern>${log.home}/@project.artifactId@/@project.artifactId@.%d{yyyy-MM-dd}.log</fileNamePattern>
+             <maxHistory>30</maxHistory>
+         </rollingPolicy>
+         <encoder>
+             <pattern>%d{HH:mm:ss,SSS} %-5p [%c] %m%n</pattern>
+         </encoder>
+     </appender>-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss,SSS} %-5p [%c] %m%n</pattern>
+        </encoder>
+    </appender>
+    <!--<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+        <!--<destination>127.0.0.1:4560</destination>-->
+        <!--<encoder class="net.logstash.logback.encoder.LogstashEncoder"/>-->
+        <!--&lt;!&ndash;<keepAliveDuration>5 minutes</keepAliveDuration>&ndash;&gt;-->
+    <!--</appender>-->
+    <logger name="com.cgi.rap.cgist" level="info"/>
+    <root level="warn">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

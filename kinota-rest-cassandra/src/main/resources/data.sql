@@ -1,0 +1,1 @@
+insert into devices(id, key) values ('2694b9e1-ce59-4fd5-b95e-aa1c780e8158', 'ecacdce7-7374-408b-997b-5877bf9e37c3')

@@ -1,0 +1,3 @@
+$top=42&$skip=23&$resultFormat=dataArray
+$resultFormat=dataArray&$skip=23&$top=42
+$skip=23&$resultFormat=dataArray&$top=42

@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings/
+.idea
+*.iml
+target/
+
+# Editor temp files
+*~
+
+# Platform specific
+.DS_Store

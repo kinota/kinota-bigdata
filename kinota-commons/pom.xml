@@ -1,0 +1,171 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.cgi.kinota</groupId>
+        <artifactId>kinota</artifactId>
+        <version>0.5.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>kinota-commons</artifactId>
+    <packaging>jar</packaging>
+    <name>CGI Kinota - Commons</name>
+    <organization>
+        <name>CGI Group Inc.</name>
+        <url>https://www.cgi.com/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License v3.0 (LGPLv3)</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
+        </license>
+    </licenses>
+    <!-- ====================================================================== -->
+    <!-- Repositories -->
+    <!-- ====================================================================== -->
+    <repositories>
+        <repository>
+            <id>osgeo</id>
+            <name>Open Source Geospatial Foundation Repository</name>
+            <url>http://download.osgeo.org/webdav/geotools/</url>
+        </repository>
+    </repositories>
+    <!-- ====================================================================== -->
+    <!-- version aliases -->
+    <!-- ====================================================================== -->
+    <properties>
+        <geotools.version>17.0</geotools.version>
+    </properties>
+    <!-- ====================================================================== -->
+    <!-- Dependencies -->
+    <!-- ====================================================================== -->
+    <dependencies>
+        <!-- ====================================================================== -->
+        <!-- JAX-RS  -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Logging  -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Jackson -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.grundid.opendatalab</groupId>
+            <artifactId>geojson-jackson</artifactId>
+            <version>1.7</version>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- ANTLR -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>4.7</version>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Spring  -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.10.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>4.3.10.RELEASE</version>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Jersey -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-jersey2-jaxrs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-processing</artifactId>
+            <version>2.25</version>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- GeoTools -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-geometry</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-geojson</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-epsg-hsql</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Misc  -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Testing  -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-maven-plugin</artifactId>
+                <version>4.7</version>
+                <executions>
+                    <execution>
+                        <id>antlr</id>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,13 @@
+<configuration debug="true">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss,SSS} %-5p [%c] %m%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="com.cgi.rap.cgist" level="debug"/>
+    <logger name="org.springframework.security" level="debug"/>
+    <logger name="org.glassfish.jersey" level="debug"/>
+    <root level="warn">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

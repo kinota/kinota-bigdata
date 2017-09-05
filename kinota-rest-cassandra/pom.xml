@@ -1,0 +1,192 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.cgi.kinota</groupId>
+        <artifactId>kinota</artifactId>
+        <version>0.5.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>kinota-rest-cassandra</artifactId>
+    <packaging>jar</packaging>
+    <name>CGI Kinota - Spring Boot REST API backed by Cassandra persistence</name>
+    <organization>
+        <name>CGI Group Inc.</name>
+        <url>https://www.cgi.com/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License v3.0 (LGPLv3)</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
+        </license>
+    </licenses>
+    <!-- ====================================================================== -->
+    <!-- Repositories -->
+    <!-- ====================================================================== -->
+    <repositories>
+        <repository>
+            <id>osgeo</id>
+            <name>Open Source Geospatial Foundation Repository</name>
+            <url>http://download.osgeo.org/webdav/geotools/</url>
+        </repository>
+    </repositories>
+    <!-- ====================================================================== -->
+    <!-- version aliases -->
+    <!-- ====================================================================== -->
+    <properties>
+        <geotools.version>17.0</geotools.version>
+    </properties>
+    <!-- ====================================================================== -->
+    <!-- Dependencies -->
+    <!-- ====================================================================== -->
+    <dependencies>
+        <!-- ====================================================================== -->
+        <!-- Intra-project  -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>com.cgi.kinota</groupId>
+            <artifactId>kinota-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cgi.kinota</groupId>
+            <artifactId>kinota-persistence-cassandra</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Spring  -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jersey</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Cassandra -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>com.datastax.cassandra</groupId>
+            <artifactId>cassandra-driver-core</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-cassandra</artifactId>
+            <version>1.5.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-cql</artifactId>
+            <version>1.5.3.RELEASE</version>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- GeoTools -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-geometry</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-geojson</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-epsg-hsql</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Misc  -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <!-- =============================================================================================== -->
+        <!-- Security -->
+        <!-- =============================================================================================== -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+        </dependency>
+        <!-- ====================================================================== -->
+        <!-- Testing  -->
+        <!-- ====================================================================== -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.cassandraunit</groupId>
+            <artifactId>cassandra-unit-shaded</artifactId>
+            <version>3.1.3.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.cgi.kinota</groupId>
+            <artifactId>kinota-persistence-cassandra</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+        </dependency>
+    </dependencies>
+    <!-- ====================================================================== -->
+    <!-- Build plugins -->
+    <!-- ====================================================================== -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
