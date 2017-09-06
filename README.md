@@ -90,6 +90,5 @@ developer machine.
 
 ### Help
 
-brian.miles@cgifederal.com
-
-david.fladung@cgifederal.com
+- brian.miles@cgifederal.com
+- david.fladung@cgifederal.com
