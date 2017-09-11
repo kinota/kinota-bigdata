@@ -1,7 +1,7 @@
 
 # Kinota&trade;
 
-Kinota&trade; is a modular open-source implmentation of
+Kinota&trade; is a modular open-source implementation of
 [OGC SensorThings API Part 1: Sensing](http://docs.opengeospatial.org/is/15-078r6/15-078r6.html);
 referred to as "STA" hereafter.  Kinota was developed to support multiple persistence backends including traditional
 RDBMS as as well as NoSQL databases; currently the only persistence backend is for Apache Cassandra.
