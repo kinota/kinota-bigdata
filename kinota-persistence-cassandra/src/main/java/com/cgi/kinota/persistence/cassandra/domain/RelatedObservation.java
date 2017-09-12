@@ -26,8 +26,11 @@ import com.cgi.kinota.commons.Utility;
 import com.cgi.kinota.commons.domain.Observation;
 import com.cgi.kinota.commons.domain.support.ObservationType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;
+import org.springframework.data.cassandra.mapping.Column;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.mapping.Table;
 
@@ -42,6 +45,8 @@ import static com.cgi.kinota.commons.Constants.*;
  */
 @Table(TABLE_RELATED_OBSERVATION)
 public class RelatedObservation extends Observation {
+
+    private static final Logger logger = LoggerFactory.getLogger(RelatedObservation.class);
 
     private Integer year;
 
@@ -64,6 +69,13 @@ public class RelatedObservation extends Observation {
         this.year = Utility.getYearForDate(phenomenonTime);
     }
 
+    @Override
+    @Column("observationid")
+    public UUID getId() { return id; }
+
+    @Override
+    public void setId(UUID id) { this.id = id; }
+    
     @PrimaryKeyColumn(name = "featureOfInterestId", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     public UUID getFeatureOfInterestId() { return featureOfInterestId; }
 
