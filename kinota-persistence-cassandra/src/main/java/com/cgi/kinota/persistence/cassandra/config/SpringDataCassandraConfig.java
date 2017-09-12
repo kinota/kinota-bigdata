@@ -107,7 +107,7 @@ public class SpringDataCassandraConfig extends AbstractCassandraConfiguration {
 
     @Override
     public String[] getEntityBasePackages() {
-        return new String[] { "com.cgi.rap.cgist.samplenetwork.domain" };
+        return new String[] { "com.cgi.kinota.persistence.cassandra.domain" };
     }
 
     @Override

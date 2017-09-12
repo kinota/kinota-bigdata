@@ -106,7 +106,7 @@ public class JerseyConfig extends ResourceConfig {
         beanConfig.setSchemes(new String[]{"https"});
         // Set a base path if desired.
         beanConfig.setBasePath("/device/api");
-        beanConfig.setResourcePackage("com.cgi.rap.cgist.samplenetwork.interfaces.rest");
+        beanConfig.setResourcePackage("com.cgi.kinota.commons.interfaces.rest");
         beanConfig.setScan(true); // this is magic and an afront to everything I hold dear
 
         logger.info("MAX_REQUEST_PAGE_SIZE = " + MAX_REQUEST_PAGE_SIZE);
