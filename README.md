@@ -1,20 +1,20 @@
 
-# Kinota&trade;
+# Kinota&trade; Big Data
 
-Kinota&trade; is a modular open-source implementation of
+Kinota&trade; Big Data is a modular open-source implementation of
 [OGC SensorThings API Part 1: Sensing](http://docs.opengeospatial.org/is/15-078r6/15-078r6.html);
 referred to as "STA" hereafter.  Kinota was developed to support multiple persistence backends including traditional
 RDBMS as as well as NoSQL databases; currently the only persistence backend is for Apache Cassandra.
 
 ## License
 
-Kinota is licensed under GNU Lesser General Public License v3.0 (LGPLv3); you may not use
+Kinota Big Data is licensed under GNU Lesser General Public License v3.0 (LGPLv3); you may not use
 this file except in compliance with the License.  For more information, please refer to
 the included [license](LICENSE.txt).
 
 ## Modules
 
-Kinota is made up of the following sub-projects/modules.
+Kinota Big Data is made up of the following sub-projects/modules.
 
 ### kinota-commons
 
@@ -37,8 +37,8 @@ authentication components into a separate module (e.g. cassandra-security-jwt).
 
 ## Compliance with OGC SensorThings API Part 1: Sensing
 
-Kinota currently implements of subset of OGC SensorThings API Part 1: Sensing.  See the table below for a summary of
-currently supported features (numbers refer to relevant sections of the STA specification).
+Kinota Big Data currently implements of subset of OGC SensorThings API Part 1: Sensing.  See the table below for a 
+summary of currently supported features (numbers refer to relevant sections of the STA specification).
 
 Feature | Supported?
 ------- | --------------
@@ -74,7 +74,7 @@ SensorThings Service Interface | &nbsp;
 
 ## Requirements
 
-Kinota requires the following:
+Kinota Big Data requires the following:
 * Java 8
 * Maven 3
 * Apache Cassandra 3.x (to use the default Cassandra persistence backend)
